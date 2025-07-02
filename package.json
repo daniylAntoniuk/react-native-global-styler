@@ -1,0 +1,33 @@
+{
+  "name": "react-native-global-styler",
+  "version": "0.1.0",
+  "description": "Desc",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "index.js",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniylAntoniuk/react-native-global-styler.git"
+  },
+  "author": "Danyil <daniyil.antoniuk@gmail.com> (https://danyil.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniylAntoniuk/react-native-global-styler/issues"
+  },
+  "homepage": "https://github.com/daniylAntoniuk/react-native-global-styler#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
