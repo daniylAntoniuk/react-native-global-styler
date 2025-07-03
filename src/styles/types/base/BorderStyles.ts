@@ -1,15 +1,13 @@
 import Nums from "./Nums";
+import Sides from "./Sides";
 
 const WidthMatcher = {
-    'border': 1,
+    'border': {key: 'borderWidth', value: 1},
 }
 
 export const BorderMatcher = {
     ...WidthMatcher,
 }
-
-type Sides = 'l' | 'r' | 'b' | 't' | 'lt' | 'lb' | 'lr' | 'rt' | 'rb' | 'bt' ;
-
 
 
 type SidedRadius<S extends string, N extends number> = `radius_${S}_${N}`;

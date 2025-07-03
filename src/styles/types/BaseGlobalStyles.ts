@@ -3,7 +3,9 @@ import FlexStyles, { FlexMatcher } from "./base/FlexStyles";
 
 type BaseGlobalStyles = FlexStyles & BorderStyles;
 
-const Matcher = {
+export const BaseMatcher = {
     ...FlexMatcher,
     ...BorderMatcher
 }
+
+export default BaseGlobalStyles;

@@ -6,17 +6,17 @@ type FlexAlignType =
   | 'baseline';
 
 const AlignMatcher = {
-    'align_start': 'flex-start',
-    'align_end': 'flex-end'
+    'align_start': {key: 'alignItems', value: 'flex-start'},
+    'align_end': {key: 'alignItems', value: 'flex-start'}
 }
 const JustifyMatcher = {
-    'justify_start': 'flex-start',
-    'justify_end': 'flex-end'
+    'justify_start': {key: 'justifyContent', value: 'flex-start'},
+    'justify_end': {key: 'justifyContent', value: 'flex-start'}
 }
 
 const FMatcher = {
-    'flex': 1,
-    'flexGrow': 1
+    'flex': {key: 'flex', value: 1},
+    'flexGrow': {key: 'flexGrow', value: 1},
 }
 
 export const FlexMatcher = {
