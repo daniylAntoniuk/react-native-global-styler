@@ -4,8 +4,8 @@ import { GlobalStyles } from "./useGlobalStyler";
 const uniqueMaps = {
     'align' : 'alignItems',
     'justify' : 'justifyContent',
-    'radius' : 'borderRadius',
-    'border' : 'borderWidth',
+    'radius' : 'border{s}Radius',
+    'border' : 'border{s}Width',
 }
 
 export const detectStyleKeys = (key: keyof GlobalStyles): string[] => {
@@ -14,7 +14,7 @@ export const detectStyleKeys = (key: keyof GlobalStyles): string[] => {
   let generatedKey: string = '';
   if (items.length === 3) {
     items[1].split("").map((char) => {
-      sides.push(SideMatcher[char]);
+      sides.push(...SideMatcher[char]);
     });
   }
 
@@ -24,7 +24,7 @@ export const detectStyleKeys = (key: keyof GlobalStyles): string[] => {
     generatedKey = items[0];
   }
 
-  return sides.length > 0 ? sides.map((s) => `${generatedKey}${s}`) : [generatedKey];
+  return sides.length > 0 ? sides.map((s) => generatedKey.includes('{s}') ? generatedKey.replace('{s}',s) : `${generatedKey}${s}`) : [generatedKey];
 };
 
 export const detectStyleValue = (key: keyof GlobalStyles) => {
