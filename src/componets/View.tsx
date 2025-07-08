@@ -13,3 +13,5 @@ const GSView = (props: GSViewProps) => {
         </View>
     )
 }
+
+export default GSView;

@@ -31,5 +31,5 @@ export const detectStyleValue = (key: keyof GlobalStyles) => {
   const items = key.split("_");
   const last = items[items.length - 1];
   const value = Number(last);
-  return isNaN(value) ? last : value;
+  return isNaN(value) ? last : items[0] === 'opacity' ? value / 100 : value;
 };
