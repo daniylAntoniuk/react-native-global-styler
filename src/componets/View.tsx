@@ -3,7 +3,7 @@ import { View, ViewProps } from 'react-native';
 import useGlobalStyler from '../styles/useGlobalStyler';
 import BaseGlobalStyles from '../styles/types/BaseGlobalStyles';
 
-type GSViewProps = BaseGlobalStyles & ViewProps;
+interface GSViewProps extends BaseGlobalStyles, ViewProps {};
 
 const GSView = (props: GSViewProps) => {
     const generatedStyles = useGlobalStyler(props);
