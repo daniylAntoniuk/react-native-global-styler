@@ -1,4 +1,5 @@
 import Nums from "./Nums";
+import Sides from "./Sides";
 
 const LMatcher = {
     'relative': {key: 'position', value: 'relative'},
@@ -8,6 +9,9 @@ const LMatcher = {
 export const LayoutMatcher = {
     ...LMatcher,
 }
+
+type SidedPadding<S extends string, N extends number> = `m${S}_${N}`;
+type SidedMargin<S extends string, N extends number> = `p${S}_${N}`;
 
 type LayoutStyles = {
     [N in Nums as `top_${N}`]?: boolean
@@ -25,6 +29,14 @@ type LayoutStyles = {
     [N in Nums as `opacity_${N}`]?: boolean
 } & {
     [N in Nums as `zIndex_${N}`]?: boolean
+} & {
+    [N in Nums as `m_${N}`]?: boolean
+} & {
+    [N in Nums as `p_${N}`]?: boolean
+} & {
+    [SP in SidedPadding<Sides,Nums>]?: boolean
+} & {
+    [SM in SidedMargin<Sides,Nums>]?: boolean
 } & {
     absolute: boolean,
     relative: boolean,

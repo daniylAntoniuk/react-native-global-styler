@@ -1,4 +1,6 @@
-type Sides = 'l' | 'r' | 'b' | 't' | 'lt' | 'lb' | 'rt' | 'rb' | 'h' | 'v' ;
+export const sidesArr = ['l', 'r', 'b', 't', 'lt', 'lb', 'rt', 'rb', 'h', 'v'] as const;
+type Sides = typeof sidesArr[number];
+
 export const SideMatcher = {
     'l' : ['Left'],
     'r' : ['Right'],
