@@ -34,6 +34,8 @@ type LayoutStyles = {
 } & {
     [N in Nums as `p_${N}`]?: boolean
 } & {
+    [N in Nums as `gap_${N}`]?: boolean
+} & {
     [SP in SidedPadding<Sides,Nums>]?: boolean
 } & {
     [SM in SidedMargin<Sides,Nums>]?: boolean
@@ -43,5 +45,3 @@ type LayoutStyles = {
 }
 
 export default LayoutStyles;
-
-//TextStyles, ImageStyles, padding, margin

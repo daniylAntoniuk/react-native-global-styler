@@ -1,12 +1,14 @@
-import { ViewStyle } from "react-native";
+import { ImageStyle, TextStyle, ViewStyle } from "react-native";
 import BaseGlobalStyles, { BaseMatcher } from "./types/BaseGlobalStyles"
 import { detectStyleKeys, detectStyleValue } from "./styleDetector";
+import ImageGlobalStyles, { ImageGlobalMatcher } from "./types/ImageGlobalStyles";
+import TextGlobalStyles, { TextGlobalMatcher } from "./types/TextGlobalStyles";
 
-export type CombinedStyle = ViewStyle;
-export type GlobalStyles = BaseGlobalStyles;
-export const GlobalMatcher = { ...BaseMatcher };
+export type CombinedStyle = ViewStyle & ImageStyle & TextStyle;
+export type GlobalStyles = BaseGlobalStyles & ImageGlobalStyles & TextGlobalStyles;
+export const GlobalMatcher = { ...BaseMatcher, ...ImageGlobalMatcher, ...TextGlobalMatcher };
 
-const useGlobalStyler = (keys: GlobalStyles) => {
+const useGlobalStyler = (keys: GlobalStyles, prefix?: string) => {
     const generatedStyles : CombinedStyle = {};
     const activeKeys = (Object.keys(keys) as (keyof GlobalStyles)[]).filter(k => keys[k]);
     activeKeys.forEach((k) => {
