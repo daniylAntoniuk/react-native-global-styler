@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "Desc",
   "exports": {
-    ".": "./index.js",
+    ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "keywords": [
     "react-native",
     "ios",
@@ -29,5 +29,8 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }

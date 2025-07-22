@@ -47,7 +47,6 @@ export const detectStyleKeys = (key: keyof GlobalStyles): string[] => {
       generatedKey = items[0];
     }
   }
-
   return sides.length > 0 ? sides.map((s) => generatedKey.includes('{s}') ? generatedKey.replace('{s}',s) : `${generatedKey}${s}`) : [generatedKey];
 };
 
