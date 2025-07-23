@@ -7,7 +7,6 @@ interface GSTextProps extends TextGlobalStyles, TextProps {};
 
 const GSText = (props: GSTextProps) => {
     const generatedStyles = useGlobalStyler(props);
-    
     return (
         <Text {...props} style={[generatedStyles, props.style]}/>
     )

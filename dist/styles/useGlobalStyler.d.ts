@@ -110,5 +110,5 @@ export declare const GlobalMatcher: {
         value: string;
     };
 };
-declare const useGlobalStyler: (keys: GlobalStyles, prefix?: string) => CombinedStyle;
+declare const useGlobalStyler: (keys: GlobalStyles, prefix?: string) => any;
 export default useGlobalStyler;

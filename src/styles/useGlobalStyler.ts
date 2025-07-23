@@ -18,16 +18,18 @@ export const GlobalMatcher = {
 
 const useGlobalStyler = (keys: GlobalStyles, prefix?: string) => {
   const generatedStyles: CombinedStyle = {};
-  const activeKeys = (Object.keys(keys) as (keyof GlobalStyles)[]).filter(
-    (k) => keys[k]
-  );
+  const activeKeys: (keyof GlobalStyles)[] = (
+    Object.keys(keys) as (keyof GlobalStyles)[]
+  ).filter((k) => keys[k]);
   activeKeys.forEach((k) => {
     if (GlobalMatcher[k]) {
       generatedStyles[GlobalMatcher[k].key] = GlobalMatcher[k].value;
     } else {
       const styles = detectStyleKeys(k);
       styles.forEach((gk) => {
-        generatedStyles[gk] = detectStyleValue(k);
+        if (detectStyleValue(k) != gk) {
+          generatedStyles[gk] = detectStyleValue(k);
+        }
       });
     }
   });

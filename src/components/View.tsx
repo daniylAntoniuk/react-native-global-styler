@@ -6,6 +6,7 @@ import BaseGlobalStyles from '../styles/types/BaseGlobalStyles';
 interface GSViewProps extends BaseGlobalStyles, ViewProps {};
 
 const GSView = (props: GSViewProps) => {
+    
     const generatedStyles = useGlobalStyler(props);
     return (
         <View {...props} style={[generatedStyles, props.style]}>

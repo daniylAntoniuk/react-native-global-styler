@@ -27,10 +27,10 @@
     "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
-    "react": "*",
     "react-native": "*"
   },
   "devDependencies": {
+    "react": "*",
     "typescript": "^5.8.3"
   }
 }
