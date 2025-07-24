@@ -17,7 +17,7 @@ npm install react-native-global-styler
 
 ---
 
-## ✨ Usage Examples
+## Usage Examples
 
 ### Prebuilt Styled Components
 
