@@ -18,9 +18,12 @@ export const GlobalMatcher = {
 
 const useGlobalStyler = (keys: GlobalStyles, prefix?: string) => {
   const generatedStyles: CombinedStyle = {};
-  const activeKeys: (keyof GlobalStyles)[] = (
+  let activeKeys: (keyof GlobalStyles)[] = (
     Object.keys(keys) as (keyof GlobalStyles)[]
   ).filter((k) => keys[k]);
+  if(prefix){
+    activeKeys = activeKeys.map((e) => e.replace(prefix,'')) as (keyof GlobalStyles)[];
+  }
   activeKeys.forEach((k) => {
     if (GlobalMatcher[k]) {
       generatedStyles[GlobalMatcher[k].key] = GlobalMatcher[k].value;

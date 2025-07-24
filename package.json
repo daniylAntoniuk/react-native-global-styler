@@ -1,7 +1,7 @@
 {
   "name": "react-native-global-styler",
   "version": "0.1.0",
-  "description": "Desc",
+  "description": "A lightweight and developer-friendly styling toolkit for React Native. It includes prebuilt styled components and a powerful `useGlobalStyler` hook to apply consistent, scalable styles using shorthand props like `m_10`, `radius_12`, `resize_cover` in componet props, and more",
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"

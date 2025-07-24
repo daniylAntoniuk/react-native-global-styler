@@ -1,5 +1,5 @@
 import Nums from "./Nums";
-import Sides from "./Sides";
+import Sides, { SidesRadius } from "./Sides";
 
 const WidthMatcher = {
     'border': {key: 'borderWidth', value: 1},
@@ -20,7 +20,7 @@ type BorderStyles = {
 } & {
     [N in Nums as `radius_${N}`]?: boolean
 } & {
-    [SR in SidedRadius<Sides,Nums>]?: boolean
+    [SR in SidedRadius<SidesRadius,Nums>]?: boolean
 }
 
 export default BorderStyles;

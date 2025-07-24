@@ -5,7 +5,10 @@ import { TextGlobalMatcher } from "./types/TextGlobalStyles";
 export const GlobalMatcher = Object.assign(Object.assign(Object.assign({}, BaseMatcher), ImageGlobalMatcher), TextGlobalMatcher);
 const useGlobalStyler = (keys, prefix) => {
     const generatedStyles = {};
-    const activeKeys = Object.keys(keys).filter((k) => keys[k]);
+    let activeKeys = Object.keys(keys).filter((k) => keys[k]);
+    if (prefix) {
+        activeKeys = activeKeys.map((e) => e.replace(prefix, ''));
+    }
     activeKeys.forEach((k) => {
         if (GlobalMatcher[k]) {
             generatedStyles[GlobalMatcher[k].key] = GlobalMatcher[k].value;
